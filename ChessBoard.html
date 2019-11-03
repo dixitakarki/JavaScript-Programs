@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+    .set{
+  	width:100px;
+    height:100px;
+    border:1px solid black;
+  }
+  .row.even div:nth-child(even).set{
+  background-color:black;
+  }
+  .row.odd div:nth-child(odd).set{
+  background-color:black;
+  }
+</style>
+</head>
+<body>
+    <!--
+    <div class="container">
+  <div class="row even">
+  <div class="col-md-2">
+  </div>
+   <div class="col-md-1 set">
+   </div>
+   <div class="col-md-1 set">
+   </div>
+   <div class="col-md-1 set">
+   </div>
+   <div class="col-md-1 set">
+   </div>
+   <div class="col-md-1 set">
+   </div>
+   <div class="col-md-1 set">
+   </div>
+   <div class="col-md-1 set">
+   </div>
+   <div class="col-md-1 set">
+   </div>
+   <div class="col-md-2">
+  </div>
+  </div>
+  <div class="row odd">
+  <div class="col-md-2">
+  </div>
+   <div class="col-md-1 set">
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-2">
+  </div>
+  </div>
+  <div class="row even">
+  <div class="col-md-2">
+  </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-2">
+  </div>
+  </div>
+  <div class="row odd">
+  <div class="col-md-2">
+  </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-2">
+  </div>
+  </div>
+  <div class="row even">
+  <div class="col-md-2">
+  </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-2">
+  </div>
+  </div>
+  <div class="row odd">
+  <div class="col-md-2">
+  </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-2">
+  </div>
+  </div>
+  <div class="row even">
+  <div class="col-md-2">
+  </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-2">
+  </div>
+  </div>
+  <div class="row odd">
+  <div class="col-md-2">
+  </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-1 set">
+   
+   </div>
+   <div class="col-md-2">
+  </div>
+  </div>
+  
+  
+</div>
+<div>
+	
+</div>
+-->
+</body>
+<script>
+
+for(var i=1;i<=8;i++){
+    var ul=document.createElement('div');
+    ul.classList.add('row');
+    i%2==0 ? ul.classList.add('even') :ul.classList.add('odd');  
+    for(var j=1;j<=8;j++){
+        var li =document.createElement('div');
+        li.classList.add('set');
+        li.classList.add('col-md-1');
+        ul.appendChild(li);
+    }
+    document.querySelector('body').appendChild(ul);
+}
+
+</script>
+</html>

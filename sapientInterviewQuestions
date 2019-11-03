@@ -1,0 +1,100 @@
+1. function test(abc){
+    const ab = abc;
+    if(ab === abc) {
+        abc = 2;
+        let b = 3;
+        let c = 2;
+        var e = 6;
+				g = 10;
+        let g = 3;
+        let s = 9;
+        e = 75;
+				const t = 1;
+    }
+    console.log(abc, ab, b, c, e, s, t, g)
+    //
+}
+test(1);
+
+Output : 
+
+
+2. Value for two console :
+function test(abc){
+    var ab = abc;
+    ab.push(3);
+    console.log(ab) //
+}
+
+var object = [1, 2, 3];
+test(object);
+object.push(6);
+object.push(5);
+console.log(object); 
+
+function test(abc){
+    var ab = abc;
+    ab.test = 'vimal’;
+    ab.raj=’35’
+    console.log(ab)
+}
+
+var object = { test: '123', raj: 31}
+test(object);
+object.raj = 31;
+console.log(object);
+
+
+
+3. //Here i used 3 concepts of JS, tell them and write the o/p
+
+var add = (function (s = 2) {
+  var counter = s;														
+  return function (e = 1) {
+    counter += e; 
+    return counter;
+  }
+})(3);
+
+add(2) // 
+add() // 
+add(3) // 
+add(4) // 
+
+Concepts:
+1. default argument (es6+) - It helps define a default value for any function argument.
+	this helps avoid any unexpected value reaching the function and breaking the code.
+2. Closure - A closure is an object formed by a function when it calls another function and loses its own context. 
+	The closer contains all the function level variables and arguments which can be used in other function. 
+	This makes possible for javascript to have features like callbacks etc.
+3. Self Invoked function - A function is a type of value in JS. Because of this it can be 
+
+
+4. s='aaaaaabccccccdeeeeeefghijklmn'
+s1 = 'abcdefghijklmn'
+
+remove duplicates and reverse it using for loop
+const r = [];
+const s1 = [];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.write syntax for hoc in react
+
+

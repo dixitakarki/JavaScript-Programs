@@ -1,0 +1,36 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+             var n = 293;
+             var length = n.toString().length;
+             var count=0,primeflag=true;
+             function primeNum(n){
+                 for(var i =2;i<Math.floor(n/2);i++){
+                     if(n%i==0){
+                         primeflag =false;
+                         break;
+                     }
+                 }
+                 return primeflag;
+             }
+             while(n>0){
+               var getprime = primeNum(n);
+               if(getprime){
+                   n = Math.floor(n/10);
+                   count++;
+               }
+               else{
+                    break;
+               }
+
+             }
+             if(count===length){
+                 console.log('russian doll prime');
+             }else{
+                 console.log('not a prime russian doll');
+             }
+        </script>
+    </body>
+</html>

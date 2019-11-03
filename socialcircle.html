@@ -1,0 +1,69 @@
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+function solution(M) {
+    M = JSON.parse(M);
+    var myArray = new Array(M.lemgth);
+    var tempArr =[];
+    for(var i=0;i<M.length;i++){
+        tempArr.length=0;
+        myArray[i]=[];
+        for(var j=0;j<M.length;j++){
+            if(i==j){
+                tempArr.push(j);
+                continue;
+            }
+            if(M[i][j]==1){
+                tempArr.push(j);
+            }
+        }
+        myArray[i].push(...tempArr);
+    }
+    tempArr =[...myArray];
+    socialCircleCheck(tempArr);
+   var result = uniqueArraySet(newArray);
+   return result;
+    // M is now your relationship matrix SxS
+}
+var newArray;
+function socialCircleCheck(tempArr){
+    var flag=false;
+    tempArr.forEach((element,index)=>{
+        for(var i=0;i<element.length;i++){
+            for(var j=index+1;j<tempArr.length;j++){
+                for(var k=0;k<tempArr[j].length;k++){
+                    if(tempArr[j][k]==element[i]){
+                        spl=tempArr.splice(j,1);
+                        tempArr[index]=[...(element.concat(...spl))];
+                        flag=true;
+                        breakFlag=true;
+                        break;
+                    }
+                    else{
+                        breakFlag=false;
+                    }
+                }
+                if(breakFlag)break;
+            }
+            if(breakFlag)break;
+        }
+    });
+    newArray =[...tempArr];
+    if(flag){
+        socialCircleCheck(tempArr);
+    }
+}
+function uniqueArraySet(newAr){
+    var str;
+    newAr.forEach((el,index)=>{
+       newAr[index]=[...Array.from((new Set(el)))]; 
+    });
+    newAr.forEach((el,index,arr)=>{
+        if(index==0){
+            str=el.toString();
+        }else{
+            str+='|'+el.toString();
+        }
+    });
+    return str;
+}

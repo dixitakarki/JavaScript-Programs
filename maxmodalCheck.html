@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+    <button onclick="displayMaxPointsModal()">click me</button>
+<script>
+const completionSnackMessage = ({pointsEarned}) => {
+    if(!pointsEarned){
+        alert('sorry o points this time');
+    }
+}
+console.log(localStorage.getItem('modalDisplay'));
+const displayMaxPointsModal = () => {
+    let maxModalDisplay = JSON.parse(localStorage.getItem('modalDisplay'));
+    let newDate = new Date();
+    newDate = newDate.setHours(24, 0, 0, 0);
+    if (!maxModalDisplay || newDate > maxModalDisplay) {
+        localStorage.setItem('modalDisplay', JSON.stringify(newDate));
+        alert('hello');
+    } else {
+        completionSnackMessage({
+            pointsEarned: 0
+        });
+    }
+};
+</script>
+</body>
+</html>

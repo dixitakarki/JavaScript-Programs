@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <style>
+      body{
+        color:red;
+        font-size:50px;
+        margin-top:100px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var myVar = 100;
+      let obj = {
+      myVar: 'foo1',
+      my:function(){
+      return function() {
+      console.log(this.myVar) ;
+      setTimeout(()=> {
+      console.log(this.myVar)
+      }, 1000)
+      }
+      }
+      }
+      var hel = obj.my();
+      hel();
+    </script>
+  </body>
+</html>

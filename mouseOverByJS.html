@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+      <style>
+          .mydiv{
+ width:200px;
+  height:50px;
+  border:1px solid black;
+  display:inline;
+}
+.mystyle{
+  width:200px;
+  height:100px;
+  background-color:cyan;
+}
+ul li{
+list-style:none;
+float:left;
+  padding-left:5px;
+  padding-right:5px;
+  border-right:1px solid black;
+  background-color:yellow;
+}
+.displayNone{
+  display:none;
+}
+.displayBlock{
+  display:block;
+}
+      </style>
+  </head>
+<body>
+  <ul>
+    <li><a href="#" class="anchor" data-element-id="myid">hello</a></li>
+     <li><a class="anchor" data-element-id="myid1">hello2</a></li>
+     <li><a class="anchor" data-element-id="myid2">hello3</a></li>
+     <li><a class="anchor" data-element-id="myid3">hello4</a></li>
+     <li><a class="anchor" data-element-id="myid4">hello5</a></li>
+  </ul>
+  <div id="myid" class="displayNone mystyle">
+    hello hovered
+  </div>
+  <div id="myid1" class="displayNone mystyle">
+    hello2 hovered
+  </div>
+  <div id="myid2" class="displayNone mystyle">
+    hello3 hovered
+  </div>
+  <div id="myid3" class="displayNone mystyle">
+    hello4 hovered
+  </div>
+  <div id="myid4" class="displayNone mystyle">
+    hello 5
+  </div>
+  </body>
+  <script>
+      var anchor = document.querySelectorAll('.anchor');
+anchor.forEach(el=>{
+ el.addEventListener('mouseover',(e)=>{
+  var av = (e.target.getAttribute('data-element-id'));
+  var closeAll = document.querySelectorAll('.mystyle');
+  document.querySelector(`#${av}`).classList.add('displayBlock');
+  });
+});
+  anchor.forEach(el=>{
+ el.addEventListener('mouseout',(e)=>{
+  var av = (e.target.getAttribute('data-element-id'));
+  document.querySelector(`#${av}`).classList.remove('displayBlock');
+  document.querySelector(`#${av}`).classList.add('displayNone');
+  });
+});
+  </script>
+</html>

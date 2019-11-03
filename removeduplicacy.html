@@ -1,0 +1,36 @@
+<html>
+    <head></head>
+    <body>
+    <script>
+         var str ="aabbcc";
+    //using for loop      
+        var uniqueStr = [],flag=false,uniqArr=[str[0]];
+        for(var i =0;i<str.length;i++){
+            for(var j=0;j<uniqueStr.length;j++){
+                if(str[i]==uniqueStr[j])
+                flag = true;
+            }
+            if(flag==false){
+                uniqueStr.push(str[i]);
+            }
+            flag =false;
+
+        }
+        console.log(uniqueStr.join(''));
+
+        ////using indexOf
+
+        for(var i =0;i<str.length;i++){
+            for(var j=0;j<uniqArr.length;j++){
+                if(uniqArr.indexOf(str[j])== -1 )
+                uniqArr.push(str[j]);
+            }
+
+        }
+        console.log(uniqArr.join(''));
+
+    //using Set 
+        console.log(Array.from(new Set(str)).join(''));
+    </script>
+    </body>
+</html>

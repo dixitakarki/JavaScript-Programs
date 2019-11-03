@@ -1,0 +1,15 @@
+<html>
+<head></head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+    var element = document.querySelectorAll('div');
+    element.forEach(function(q) {
+                        console.log(q);
+                    });
+</script>
+</body>
+</html>

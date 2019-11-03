@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    Decimal to Binary conversion in JavaScript
+</head>
+
+<body>
+    <script>
+        var n = 23,
+            arr = [];
+            console.log(n+"=>");
+        while (n > 0) {
+            arr.push(n % 2);
+            n = Math.floor(n / 2);
+        }
+        console.log(arr.reverse().join(''));
+    </script>
+</body>
+
+</html>

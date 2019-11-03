@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            var lengthOfLongestSubstring = function(s) {
+    const len = s.length;
+    if (len < 2) { return s+","+len; }
+    let res = [];
+    let tmp = [];
+    console.log([...s]);
+    [...s].forEach(x => {  
+      if (tmp.includes(x)) {
+        tmp = [...tmp.slice(tmp.findIndex(y => y === x ) + 1)];
+      }
+      tmp.push(x);    
+      if (tmp.length > res.length) { res = tmp; }
+    });
+  return res.join("")+","+res.length;
+};
+console.log(lengthOfLongestSubstring("pwwekew"));
+        </script>
+    </body>
+</html>

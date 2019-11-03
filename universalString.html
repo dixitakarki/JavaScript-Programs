@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function countBy(freqArray){
+       var count=0;
+       var arr= freqArray.reduce(function (acc, curr) {
+  if (typeof acc[curr] == 'undefined') {
+    acc[curr] = 1;
+  } else {
+    acc[curr] += 1;
+  }
+
+  return acc;
+}, {});
+var sortedArray=(Object.keys(arr).sort((a,b)=> arr[a]-arr[b]));
+for(var i=1;i<freqArray.length;i++){
+    if((sortedArray[sortedArray.length-1])!=freqArray[i])
+    {
+        count++;
+    }
+}
+if(count>=2){
+    return false;
+}
+else{
+return sortedArray;  
+}
+}
+function getFrequency(string) {
+    var freq = {};
+    for (var i=0; i<string.length;i++) {
+        var character = string.charAt(i);
+        if (freq[character]) {
+           freq[character]++;
+        } else {
+           freq[character] = 1;
+        }
+    }
+    var freqArray =Object.values(freq);
+    var validCase=(freqArray.every( (val, i, freqArray) => val === freqArray[0] ));
+    if(validCase){
+        return "valid";
+    }
+    else{
+       var d = countBy(freqArray); 
+       if(!d){
+           return "invalid";
+       }
+       else{
+           if(Math.abs(parseInt(d[0])-parseInt(d[1]))==1){
+               return "valid";
+           }
+           else {
+               return "invalid";
+           }
+       }
+    }
+}
+console.log(getFrequency('hhhaaabbbdddd000444'));
+            </script>
+    </body>
+</html>

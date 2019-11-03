@@ -1,0 +1,24 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function findmaximum(arr){
+                arr.sort((a,b)=> a-b);
+                return arr[arr.length-1];
+            }
+            var arr=[9, 7, 2, 4, 6, 8, 2, 1, 5],k=3,newArray=[],maxArr=[];
+            for(var i=0;i<arr.length-2;i++){
+                newArray[i]= new Array(k);
+                for(var j=0;j<k;j++){
+                    newArray[i][j]= arr[i+j];
+                }
+            }
+            for(var i=0;i<newArray.length;i++){
+                maxArr.push(findmaximum(newArray[i]));
+            }
+            console.log(maxArr);
+        </script>
+    </body>
+</html>

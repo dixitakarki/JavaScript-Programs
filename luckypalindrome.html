@@ -1,0 +1,51 @@
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+function solution(S) {
+    let length = S.length;
+    var table = new Array(length);
+    for(var i=0;i<length;i++){
+        table[i]=new Array(length);
+    }
+    var maxlen = 1;
+    for(var i=0;i<length;++i){
+        table[i][i]=true;
+    }
+    var start =0;
+    for(var i=0;i<length-1;++i){
+        if(S.charAt(i)==S.charAt(i+1)){
+            table[i][i+1]=true;
+            start=i;
+            maxlen =2;
+        }
+    }
+    for(var k=3;k<=length;++k){
+        for(var i=0;i<length-k+1;++i){
+            var j= i+k-1;
+            if(table[i+1][j-1]&&S.charAt(i)==S.charAt(j)){
+                table[i][j]=true;
+                if(k>maxlen){
+                    start=i;
+                    maxlen=k;
+                }
+            }
+        }
+    }
+ return printSubStr(S,start,start+maxlen-1);
+    // write your code in JavaScript (Node.js 8.9.4)
+}
+function printSubStr(S,low,high){
+    num = S.substring(low,high+1).length;
+  var result =   isPrime(num);
+  if(result){
+      return "YES";
+  }else{
+      return "NO";
+  }
+}
+function isPrime(num){
+    for(let i=2,s=Math.sqrt(num);i<=s;i++){
+        if(num%i===0)return false;
+        return num>1;
+    }
+}

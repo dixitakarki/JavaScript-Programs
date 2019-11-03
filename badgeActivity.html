@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>  
+</head>
+<body>
+        <div id="myid">
+            <div class="hello"></div>
+        <div class="hello"></div>
+        <div class="hello"></div>
+        <div class="hello"></div></div>
+        <script>
+                function vv(){
+                        console.log("vv",this);
+                        return {
+                 vehicle:function(){
+                        console.log("vehicle",this);
+                        return {
+                                myfun1:function(){
+                                        console.log("myfun1",this);
+                                        return this;
+                                }, myfun2:function(){
+                                        console.log("myfun2",this);
+                                        return this;
+                                }, myfun3:function(){
+                                        console.log("myfun3",this);
+                                        return this;
+                                }, myfun4:function(){
+                                        console.log("myfun4",this);
+                                        return this;
+                                }
+                        }
+                }
+                        }
+                }
+
+
+                var user = {
+                 vehicle:function(){
+                        console.log("vehicle",this);
+                        return {
+                                myfun1:function(){
+                                        console.log("myfun1",this);
+                                        return this;
+                                }, myfun2:function(){
+                                        console.log("myfun2",this);
+                                        return this;
+                                }, myfun3:function(){
+                                        console.log("myfun3",this);
+                                        return this;
+                                }, myfun4:function(){
+                                        console.log("myfun4",this);
+                                        return this;
+                                }
+                        }
+                }
+                        }
+                        user.vehicle();
+              var v=  vv();
+                var mybehcile = v.vehicle();
+                mybehcile.myfun1();
+                mybehcile.myfun1().myfun2().myfun3().myfun4();
+        var rewardsBadgeAttribute = document.getElementById('myid');
+                rewardsBadgeAttribute.setAttribute('data-badge-target','');
+                rewardsBadgeAttribute.setAttribute('data-activity-id','0d814eac-f7cb-4bde-b885-5e645d46444a');
+                var t=document.querySelectorAll('.hello');
+                console.log("length equal check",4===t.length);
+                var n = 4 === t.length ? "pass" : "fail";
+                console.log("ternary",n);
+function hello(){
+    window.dispatchEvent(new CustomEvent('badge-activity-complete'),function(){
+                  document.getElementById('#button1').hidden=true;
+                });
+}
+               
+        </script>
+<button onclick="hello()" id="button1" data-badge-complete>complete activity</button>
+<script src="https://cdn-pi.aarp.net/etc/aarp-foundation/clientlibs/loyaltyEventListener.js"></script>
+<script src="https://cdn-pi.aarp.net/etc/aarp-foundation/clientlibs/earnActivityBadge.js"></script>
+</body>
+</html>

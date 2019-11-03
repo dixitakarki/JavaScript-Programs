@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+    /*----------One way------------*/
+/*            
+.center{
+width: 60px;
+height: 60PX;
+position: absolute;
+top: 0;
+right: 0;
+left: 0;
+bottom: 0;
+margin: auto;
+border: 1px solid black;
+}*/
+
+/*---------------2nd way--------------*/
+/*
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.center{
+width: 60px;
+height: 60PX;
+border: 1px solid black;
+}
+*/
+        </style>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <div class="container"><div class="center"></div></div>
+            <script>
+                const characterList = document.querySelector('.characters');
+  characterList.addEventListener('click', (event) => {
+	console.log(event.target);
+});
+document.querySelector('div').addEventListener('click',function(e){
+    alert(e.target);
+},true);
+            </script>
+    </body>
+</html>
