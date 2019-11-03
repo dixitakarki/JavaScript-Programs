@@ -1,0 +1,116 @@
+<!doctype html>
+    <head></head>
+    <body>
+    <script>
+
+var item;
+var mf = 1;
+var myMap = new Map();
+var countTemp=0,flagCount=0,strIndex;
+function isUniversalLuckyString(str){
+let count = {},addMapValues=0;
+let m = 0;
+
+for(let i=0; i<str.length; i++){
+if(str[i] in count){
+count[str[i]]=count[str[i]]+1;
+myMap.set(str[i],myMap.get(str[i])+1);
+}
+else{
+count[str[i]]=1;
+myMap.set(str[i],1);
+}
+}
+console.log('countobj',count);
+console.log('myMap',myMap);
+//---------------
+let valuesCount = Array.from(myMap.values());
+console.log('vc',valuesCount);
+for(let i=0;i<valuesCount.length;i++){
+  for (let j=i; j<valuesCount.length; j++)
+        {
+                if (valuesCount[i] == valuesCount[j])
+                 m++;
+                if (mf<=m)
+                {
+                  mf=m; 
+                  item = valuesCount[i];
+                  strIndex=i;
+                }
+        }
+        m=0;
+}
+console.log('max repeated item', item);
+console.log('index',strIndex);
+console.log('map key',Array.from(myMap.keys())[strIndex]);
+// let compareInp = mf;
+// let isUniversalStr= true;
+// //----------
+// for(let i=0; i<valuesCount.length; i++){
+
+// if(compareInp !== valuesCount[i]){
+// isUniversalStr = false;
+// break;
+// }
+
+// }
+//----------
+// let mf = 1;
+// let m = 0;
+// let item;
+// for (let i=0; i<arr1.length; i++)
+// {
+//         for (let j=i; j<arr1.length; j++)
+//         {
+//                 if (arr1[i] == arr1[j])
+//                  m++;
+//                 if (mf<m)
+//                 {
+//                   mf=m; 
+//                   item = arr1[i];
+//                 }
+//         }
+//         m=0;
+// }
+myMap.forEach(function(val,key){
+    checkValCounter(val);
+});
+if(flagCountCheck()!="isOne")
+console.log('flagCountCheck',flagCountCheck());
+else{
+  console.log('thunder');
+  myMap.forEach((mnt,k,m)=>{
+    addMapValues=addMapValues+mnt;
+  });
+  rem=addMapValues%myMap.get(Array.from(myMap.keys())[strIndex]);
+  console.log('rem',rem);
+  console.log('div',addMapValues/myMap.size);
+  if(rem==1){
+    console.log('flagCountCheck isOne',true);
+  }else{
+    console.log('flagCountCheck isOne',false);
+  }
+}
+}
+function checkValCounter(val){
+    if (countTemp == 0) {
+        countTemp = myMap.get(Array.from(myMap.keys())[strIndex]);
+    }else if (countTemp!=val){
+        flagCount++;
+    }
+};
+function flagCountCheck(){
+    if(flagCount>1){
+        return false;
+    }
+    else if(flagCount==0){
+        return true;
+    }
+    else{
+        return 'isOne';
+    }
+};
+isUniversalLuckyString('accbaa');
+</script>
+    </body>
+</html>
