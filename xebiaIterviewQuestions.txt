@@ -1,7 +1,0 @@
-Xebeia interview question 
-
-1-axios vs fetch
-2- es6 arrow function difference and advantage over traditional function
-3-let vs var
-4-reactroute and or
-5-
